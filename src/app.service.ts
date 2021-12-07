@@ -2,26 +2,19 @@ import { Injectable, Type } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getAnswer(): Promise<any> {
+    let a,b:number;
+    a=11234
+    b=45
+    const res=this.maxNumber(a,b)
+    return res
   }
-  getNumbers():number {
-    return 23
-  } 
-  getString():string {
-    return 'Hello World!'
-  } 
-  getArrays(): number[] {
-    return [1,2,3]
-  } 
-  getEnums():  any {
-    return {l:1,s:3,a:4}
-  }
-  getMultitypeArrays():(string|number)[] {
-    return [1,3,"hello",4]
-  } 
-  getMultitypeValues(): string|number {
-    return "string|number"
+  public async maxNumber(a:number,b:number){
+    if(a>b){
+      return a
+    }else{
+      return b
+    }
   }
 
 }
